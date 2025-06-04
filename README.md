@@ -2,6 +2,6 @@
 ## 👥 Integrantes
 - **Gabriel Sabino**
 - **João Guilherme** 
-- **João Pedro**
+- **Joao Pedro**
 - **Laura Miranda** 
 - **Kalani Rafael**
