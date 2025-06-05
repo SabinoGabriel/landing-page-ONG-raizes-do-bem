@@ -23,7 +23,8 @@ header {
 }
 
 #nav_logo {
-    font-size: 26px;
+    font-size: 30px;
+    font-weight: 600;
     color: white; /* Por enquanto ta feio */
 }
 
@@ -37,4 +38,44 @@ header {
     text-decoration: none; /*Tira o sublinhado*/
     color: #003C0F;
     font-weight: 600;
+}
+
+#mobile_btn {
+    display: none;
+}
+
+#mobile_menu {
+    display: none;
+}
+
+/*Quando chega em talpx, a nav_lista some e volta o mobile_btn*/
+@media screen and (max-width: 1000px) {
+    #nav_lista {
+        display: none;
+    }
+    #mobile_btn{
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.75rem;
+        cursor: pointer; /*Troca o cursor*/
+    }
+
+    #mobile_menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #mobile_nav_lista {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0px;
+    }
+
+    #mobile_nav_lista .nav_item{
+        list-style: none; /*Tira as bolinhas da lista*/
+    
+    }
 }
