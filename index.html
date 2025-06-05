@@ -3,18 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!--Importando a fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>ONG Raízes do Bem - Transforme Tempo em Impacto</title>
     </head>
 <body>
 
+    <!--Navbar-->
     <header id="home">
+        <nav id="navbar">
+            <i id="nav_logo">Raízes do bem</i>
+            <ul id="nav_lista">
+                <li class="nav_item">
+                    <a href="#sobre">Sobre a ong</a>
+                </li>
+                 <li class="nav_item">
+                    <a href="#como-ajudar">Como Ajudar</a>
+                </li>
+                 <li class="nav_item">
+                    <a href="#impacto">Impactos</a>
+                </li>
+                 <li class="nav_item">
+                    <a href="#formulario-secao">Formulário</a>
+                </li>
+            </ul>
+            <!--Botão para o mobile-->
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+        <!--Só vai aparecer no mobile-->
+        <div id="mobile_menu">
+            <ul id="mobile_nav_lista">
+                <li class="nav_item">
+                    <a href="#sobre">Sobre a ong</a>
+                </li>
+                 <li class="nav_item">
+                    <a href="#como-ajudar">Como Ajudar</a>
+                </li>
+                 <li class="nav_item">
+                    <a href="#impacto">Impactos</a>
+                </li>
+                 <li class="nav_item">
+                    <a href="#formulario-secao">Formulário</a>
+                </li>
+            </ul>
+        </div>
+        
         <div class="container">
             <h1>Transforme tempo em impacto</h1>
             <p>A ONG Raízes do Bem atua há 15 anos levando educação, saúde e esperança a comunidades carentes. Seja um agente de mudança.</p>
             <a href="#formulario-secao" class="button">Quero ajudar</a>
         </div>
     </header>
-
+        
     <section id="sobre">
         <div class="container">
             <h2>Sobre a ONG</h2>
