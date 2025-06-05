@@ -34,7 +34,7 @@ header#home {
     background-repeat: no-repeat;
     position: relative;
     color: #FFFFFF;
-    padding-bottom: 80px; /* Espaço para o conteúdo do hero abaixo da navbar */
+    /*padding-bottom: 80px; /* Espaço para o conteúdo do hero abaixo da navbar */
 }
 
 header#home::before { /* Sobreposição escura */
@@ -54,7 +54,7 @@ header#home::before { /* Sobreposição escura */
     background-color: rgba(0, 60, 15, 0.9); /* Verde escuro semi-transparente da navbar */
     position: relative; /* Para ficar acima da sobreposição do header */
     z-index: 3; /* Acima da sobreposição e do conteúdo do hero se necessário */
-    /* border-bottom: 1px solid rgba(255,255,255,0.2); Opcional: linha sutil abaixo da navbar */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .nav_container {
@@ -62,29 +62,29 @@ header#home::before { /* Sobreposição escura */
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 #nav_logo_link {
-    font-size: 1.4em; /* Ajustado */
-    font-weight: 600; /* Ajustado */
+    font-size: 1.4rem; /* Ajustado */
+    font-weight: 700; /* Ajustado */
     color: #FFFFFF;
     text-decoration: none;
     display: flex;
     align-items: center;
+    gap: 12px;
 }
 
 #logo {
     height: 40px;
-    margin-right: 10px; /* Espaço entre logo e texto */
-    vertical-align: middle;
+    width: auto;
 }
 
 #nav_lista {
     display: flex;
     list-style: none;
-    gap: 25px; /* Ajustado gap */
+    gap: 20px; /* Ajustado gap */
 }
 
 .nav_item a {
@@ -94,8 +94,8 @@ header#home::before { /* Sobreposição escura */
     background-color: #D1FF3E;
     color: #003C0F; /* Texto verde escuro no botão */
     font-weight: 600;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 24px;
+    transition: all 0.3s ease;
 }
 
 .nav_item a:hover {
@@ -108,7 +108,7 @@ header#home::before { /* Sobreposição escura */
     border: none;
     background-color: transparent;
     color: #FFFFFF; /* Cor do ícone hamburguer */
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
@@ -116,8 +116,8 @@ header#home::before { /* Sobreposição escura */
     display: none; /* Escondido por padrão */
     background-color: rgba(0, 60, 15, 0.95); /* Fundo similar à navbar */
     position: relative; /* Para z-index funcionar dentro do header */
-    z-index: 2; /* Abaixo da navbar, acima da sobreposição do hero */
-    padding: 15px 0;
+    z-index: 10; /* Abaixo da navbar, acima da sobreposição do hero */
+    padding: 20px 0;
 }
 
 #mobile_nav_lista {
@@ -125,7 +125,7 @@ header#home::before { /* Sobreposição escura */
     display: flex;
     flex-direction: column;
     align-items: center; /* Centraliza itens do menu mobile */
-    gap: 15px;
+    gap: 16px;
 }
 
 #mobile_nav_lista .nav_item a { /* Reutiliza o estilo dos botões da navbar */
@@ -143,37 +143,38 @@ header#home::before { /* Sobreposição escura */
 }
 
 .hero_content_container h1 {
-    font-size: 3em; /* Ajuste conforme o Figma */
-    font-weight: 700;
+    font-size: 3.2rem; /* Ajuste conforme o Figma */
+    font-weight: 800;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    line-height: 1.6;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero_content_container p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    max-width: 650px;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    line-height: 1.6;
+    text-shadow: 0px 1px 3px rgba(0,0,0,0.4);
 }
 
 .button.hero_button { /* Botão específico do Hero */
     background-color: #007bff; /* Azul do Figma */
     color: #FFFFFF;
-    padding: 12px 30px;
-    border-radius: 25px;
+    padding: 14px 40px;
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.15em;
+    font-weight: 700;
+    font-size: 1.2rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
 
 .button.hero_button:hover {
     background-color: #0056b3;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 /* --- Estilos Gerais de Seção --- */
