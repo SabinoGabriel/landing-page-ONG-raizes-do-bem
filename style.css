@@ -12,32 +12,51 @@ body {
 
 header {
     width: 100%;
-    padding: 28px 8%;
+    background-color: rgba(0, 60, 15, 40%);
 }
 
 #navbar {
     width: 100%;
-    display: flex; /*Um ao lado do outro*/
-    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 60, 15, 90%);
+}
+
+.nav_container{
+    display: flex; /*Um ao lado do outro*/ 
+    width: 100%;
     justify-content: space-between;
+    align-items: center;
 }
 
 #nav_logo {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
     color: white; /* Por enquanto ta feio */
+    padding: 0px 20px;
 }
 
+#logo {
+    height: 40px;
+    vertical-align: middle;
+}
 #nav_lista {
     display: flex;
     list-style: none; /*Tira as bolinhas da lista*/
-    gap: 48px; /*Distanciamento na navbar*/
+    gap: 55px; /*Distanciamento na navbar*/
+    width: 60%;
 }
 
 .nav_item a {
     text-decoration: none; /*Tira o sublinhado*/
     color: #003C0F;
     font-weight: 600;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #D1FF3E;
+    color: #000;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #mobile_btn {
@@ -78,4 +97,8 @@ header {
         list-style: none; /*Tira as bolinhas da lista*/
     
     }
+}
+
+.container {
+    text-align: center;
 }
