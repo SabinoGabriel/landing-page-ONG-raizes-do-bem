@@ -198,21 +198,61 @@ main section .container > p { /* Parágrafo introdutório da seção */
 }
 
 /* --- Seção Sobre a ONG --- */
+#sobre {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#sobre .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sobre h2 {
+    font-size: 2.8rem;
+    color: #003C0F;
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.sobre-content {
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sobre-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
 .sobre-imagens {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start; /* Alinha pelo topo */
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 40px;
+    width: 100%;
     flex-wrap: wrap;
 }
 
 .sobre-imagens img {
     width: 100%;
-    max-width: 48%; /* Para duas colunas com gap */
+    max-width: 500px; 
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.12);
+    transition: all 0.4s ease;
+}
+
+.sobre-imagens img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Seção Como Você Pode Ajudar --- */
@@ -431,8 +471,13 @@ footer p:last-child {
         font-size: 1em;
     }
 
+    .sobre-imagens {
+        flex-direction: column;
+        align-items: center;
+    }
     .sobre-imagens img {
         max-width: 90%; /* Imagens empilhadas */
+        height: 300px;
         margin-bottom: 20px;
     }
     .sobre-imagens img:last-child {
