@@ -161,8 +161,8 @@ header#home::before { /* Sobreposição escura */
 }
 
 .button.hero_button { /* Botão específico do Hero */
-    background-color: #007bff; /* Azul do Figma */
-    color: #FFFFFF;
+    background-color: #D1FF3E; /* Verde claro amarelado */
+    color: #003C0F; /* Texto verde escuro */
     padding: 14px 40px;
     border-radius: 30px;
     text-decoration: none;
@@ -173,7 +173,7 @@ header#home::before { /* Sobreposição escura */
 }
 
 .button.hero_button:hover {
-    background-color: #0056b3;
+    background-color: #b8e038;
     transform: translateY(-3px);
 }
 
