@@ -3,92 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>ONG Raízes do Bem - Transforme Tempo em Impacto</title>
-    </head>
+</head>
 <body>
 
     <header id="home">
-        <div class="container">
-            <h1>Transforme tempo em impacto</h1>
-            <p>A ONG Raízes do Bem atua há 15 anos levando educação, saúde e esperança a comunidades carentes. Seja um agente de mudança.</p>
-            <a href="#formulario-secao" class="button">Quero ajudar</a>
-        </div>
-    </header>
-
-    <section id="sobre">
-        <div class="container">
-            <h2>Sobre a ONG</h2>
-            <p>Somos uma organização sem fins lucrativos atuando no sertão nordestino com projetos de alfabetização, capacitação de jovens e atendimento básico de saúde. Nosso trabalho só é possível com o apoio de voluntários e doações.</p>
-        </div>
-    </section>
-
-    <section id="como-ajudar">
-        <div class="container">
-            <h2>Como você pode ajudar</h2>
-            <ul>
-                <li>🧒 Seja voluntário em nossos projetos educativos</li>
-                <li>🥫 Ajude com alimentos ou materiais escolares</li>
-                <li>💸 Doe qualquer valor mensalmente</li>
-                <li>📢 Divulgue nossa causa</li>
-                <li>🛠 Contribua com serviços (design, marketing, tecnologia)</li>
-                <li>🎁 Apoie com brindes para ações sociais</li>
+        <nav id="navbar">
+            <div class="nav_container">
+                <a href="#home" id="nav_logo_link"> 
+                    <img src="img/logoong.png" id="logo" alt="Logo Raízes do Bem"> 
+                    <span>Raízes do Bem</span>
+                </a>
+                <ul id="nav_lista">
+                    <li class="nav_item"><a href="#sobre">Sobre a ONG</a></li>
+                    <li class="nav_item"><a href="#como-ajudar">Como Ajudar</a></li>
+                    <li class="nav_item"><a href="#impacto">Impactos</a></li>
+                    <li class="nav_item"><a href="#formulario-secao">Formulário</a></li>
+                </ul>
+                <button id="mobile_btn" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_lista">
+                <li class="nav_item"><a href="#sobre">Sobre a ONG</a></li>
+                <li class="nav_item"><a href="#como-ajudar">Como Ajudar</a></li>
+                <li class="nav_item"><a href="#impacto">Impactos</a></li>
+                <li class="nav_item"><a href="#formulario-secao">Formulário</a></li>
             </ul>
         </div>
-    </section>
 
-    <section id="impacto">
-        <div class="container">
-            <h2>Impacto em Números</h2>
-            <div class="impacto-grid">
-                <div class="impacto-item">
-                    <p><span class="icone-impacto">📈</span> <strong>3.000</strong> crianças alfabetizadas</p> </div>
-                <div class="impacto-item">
-                    <p><span class="icone-impacto">👥</span> <strong>120</strong> voluntários ativos</p>
+        <div class="hero_content_container">
+            <h1>Transforme tempo em impacto</h1>
+            <p>A ONG Raízes do Bem atua há 15 anos levando educação, saúde e esperança a comunidades carentes. Seja um agente de mudança.</p>
+            <a href="#formulario-secao" class="button hero_button">Quero ajudar</a>
+        </div>
+    </header>
+    
+    <main>
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre a ONG</h2>
+                <div class="sobre-content">
+                    <p>Somos uma organização sem fins lucrativos atuando no sertão nordestino com projetos de alfabetização, capacitação de jovens e atendimento básico de saúde.</p>
+                    <p>Nosso trabalho só é possível com o apoio de voluntários e doações.</p>
                 </div>
-                <div class="impacto-item">
-                    <p><span class="icone-impacto">🌍</span> <strong>5</strong> estados atendidos</p>
+                <div class="sobre-imagens">
+                    <img src="img/sobre-criancas-escola.png" alt="Crianças em sala de aula participando de atividades educativas">
+                    <img src="img/sobre-atendimento-saude.png" alt="Profissional de saúde realizando atendimento em comunidade">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="formulario-secao">
-        <div class="container">
-            <h2>Cadastre-se</h2>
-            <p>Cadastre-se para se voluntariar ou receber nosso informativo:</p>
-            <form action="#" method="POST"> <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        <section id="como-ajudar">
+            <div class="container">
+                <h2>Como você pode ajudar</h2>
+                <div class="ajuda-grid">
+                    <div class="ajuda-item">
+                        <img src="img/ajuda-voluntario.PNG" alt="Voluntariado em projetos educativos">
+                        <div class="ajuda-item-overlay">
+                            <p>Seja voluntário em nossos projetos educativos</p>
+                        </div>
+                    </div>
+                    <div class="ajuda-item">
+                        <img src="img/ajuda-alimentos.PNG" alt="Doação de alimentos e materiais escolares">
+                        <div class="ajuda-item-overlay">
+                            <p>Ajude com alimentos ou materiais escolares</p>
+                        </div>
+                    </div>
+                    <div class="ajuda-item">
+                        <img src="img/ajuda-doacao-mensal.PNG" alt="Doação mensal para a ONG">
+                        <div class="ajuda-item-overlay">
+                            <p>Doe qualquer valor mensalmente</p>
+                        </div>
+                    </div>
+                    <div class="ajuda-item">
+                        <img src="img/ajuda-divulgue.PNG" alt="Divulgação da causa da ONG">
+                        <div class="ajuda-item-overlay">
+                            <p>Divulgue nossa causa</p>
+                        </div>
+                    </div>
+                    <div class="ajuda-item">
+                        <img src="img/ajuda-servicos.PNG" alt="Contribuição com serviços de design, marketing, tecnologia">
+                        <div class="ajuda-item-overlay">
+                            <p>Contribua com serviços (design, marketing, tecnologia)</p>
+                        </div>
+                    </div>
+                    <div class="ajuda-item">
+                        <img src="img/ajuda-brindes.PNG" alt="Apoio com brindes para ações sociais">
+                        <div class="ajuda-item-overlay">
+                            <p>Apoie com brindes para ações sociais</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Seu melhor email" required>
-                </div>
-                <div>
-                    <label for="como-ajudar-select">Como deseja ajudar?</label>
-                    <select id="como-ajudar-select" name="como_ajudar_select">
-                        <option value="" disabled selected>Selecione uma opção</option>
-                        <option value="voluntario_educativo">Ser voluntário em projetos educativos</option>
-                        <option value="doacao_alimentos_materiais">Ajudar com alimentos ou materiais escolares</option>
-                        <option value="doacao_mensal">Doar qualquer valor mensalmente</option>
-                        <option value="divulgar_causa">Divulgar nossa causa</option>
-                        <option value="contribuir_servicos">Contribuir com serviços (design, marketing, etc.)</option>
-                        <option value="apoiar_brindes">Apoiar com brindes para ações sociais</option>
-                        <option value="receber_informativo">Receber nosso informativo</option>
-                        <option value="outros">Outros</option>
-                    </select>
-                </div>
-                <button type="submit" class="button">Quero participar</button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
 
+        <section id="impacto">
+            <div class="container">
+                <h2>Impactos</h2>
+            </div>
+            <div class="impacto-barra-wrapper"> <div class="impacto-barra-carrossel" id="impactoCarrossel">
+                <div class="item-carrossel">
+                    <p>+3.000 crianças alfabetizadas</p>        
+                </div>
+                <div class="item-carrossel">
+                    <p>120 voluntarios ativos</p>
+                </div>
+                <div class="item-carrossel">
+                    <p>5 estados atendidos</p>
+                </div>
+            </div>
+            </div>
+            <div class="container impacto-imagem"> <div class="impacto-imagem-wrapper"> <div class="impacto-imagem-carrossel" id="imagemCarrossel">
+                    <img src="img/carrossel-a.PNG" alt="Atendimento comunidade" class="carrossel-imagem-item">
+                    <img src="img/carrossel-b.PNG" alt="Atendimento educativo" class="carrossel-imagem-item">
+                    <img src="img/carrossel-c.PNG" alt="Atendimento ambiental" class="carrossel-imagem-item">
+                    </div>
+                <button class="carrossel-control prev" aria-label="Imagem anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carrossel-control next" aria-label="Próxima imagem"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="carrossel-dots" id="imagemCarrosselDots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="formulario-secao">
+            <div class="container">
+                <h2>Formulário</h2>
+                <p>Cadastre-se para se voluntariar ou receber nosso informativo:</p>
+                <form action="#" method="POST">
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Seu melhor email" required>
+                    </div>
+                    <div>
+                        <label for="como-ajudar-select">Como deseja ajudar?</label>
+                        <select id="como-ajudar-select" name="como_ajudar_select" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="voluntario_educativo">Ser voluntário em projetos educativos</option>
+                            <option value="doacao_alimentos_materiais">Ajudar com alimentos ou materiais escolares</option>
+                            <option value="doacao_mensal">Doar qualquer valor mensalmente</option>
+                            <option value="divulgar_causa">Divulgar nossa causa</option>
+                            <option value="contribuir_servicos">Contribuir com serviços (design, marketing, etc.)</option>
+                            <option value="apoiar_brindes">Apoiar com brindes para ações sociais</option>
+                            <option value="receber_informativo">Receber nosso informativo</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button form_button">Quero participar</button>
+                </form>
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="container">
             <p>&copy; 2025 ONG Raízes do Bem. Todos os direitos reservados.</p>
             <p>Transformando vidas, semeando esperança.</p>
         </div>
     </footer>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="javascript/script.js"></script>
 </body>
 </html>
