@@ -17,13 +17,32 @@ body {
     background-color: #F2FFCA; /* Verde bem pálido de fundo para seções de conteúdo */
     color: #333; /* Cor de texto padrão */
     line-height: 1.6;
+    position: relative; /* Para o background de cacto */
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+/* Fundo de cactos repetido */
+body::before {
+    content: '';
+    position: fixed; /* Mudar para fixed para que o fundo não role com o conteúdo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que fique atrás do conteúdo */
+    background-image: url('img/cacto.png'); 
+    background-repeat: repeat;
+    background-position: center center; /* Centraliza a repetição */
+    background-size: 750px auto; /* Mantém a proporção, ajusta a largura */
+    background-color: #F2FFCA; /* Cor de fundo para o caso da imagem não carregar */
+    opacity: 0.1;
 }
 
 .container {
     width: 90%; /* Mais largo em telas maiores */
-    max-width: 1100px; /* Limite máximo de largura */
+    max-width: 1120px; /* Limite máximo de largura (regra do 8: 1120 = 140 * 8) */
     margin: 0 auto; /* Centraliza */
-    padding: 0 15px; /* Espaçamento lateral pequeno */
+    padding: 0 16px; /* Espaçamento lateral pequeno (regra do 8: 16px) */
 }
 
 /* --- Header e Navbar --- */
@@ -34,7 +53,7 @@ header#home {
     background-repeat: no-repeat;
     position: relative;
     color: #FFFFFF;
-    /*padding-bottom: 80px; /* Espaço para o conteúdo do hero abaixo da navbar */
+    padding-bottom: 80px; /* Espaço para o conteúdo do hero abaixo da navbar */
 }
 
 header#home::before { /* Sobreposição escura */
@@ -50,11 +69,11 @@ header#home::before { /* Sobreposição escura */
 
 #navbar {
     width: 100%;
-    padding: 15px 0; /* Ajustado padding */
-    background-color: rgba(0, 60, 15, 0.9); /* Verde escuro semi-transparente da navbar */
+    padding: 16px 0; /* Ajustado padding (regra do 8: 16px) */
+    background-color: rgba(0, 60, 15, 0.95); /* Verde escuro semi-transparente da navbar */
     position: relative; /* Para ficar acima da sobreposição do header */
     z-index: 3; /* Acima da sobreposição e do conteúdo do hero se necessário */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2); /* Sombra mais suave (regra do 4 e 8) */
 }
 
 .nav_container {
@@ -67,40 +86,56 @@ header#home::before { /* Sobreposição escura */
 }
 
 #nav_logo_link {
-    font-size: 1.4rem; /* Ajustado */
-    font-weight: 700; /* Ajustado */
+    font-size: 1.5rem; /* Ajustado */
+    font-weight: 700;
     color: #FFFFFF;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px; /* Espaçamento ajustado (regra do 8: 8px) */
 }
 
 #logo {
-    height: 40px;
+    height: 48px; /* Aumentado um pouco */
     width: auto;
 }
 
 #nav_lista {
     display: flex;
     list-style: none;
-    gap: 20px; /* Ajustado gap */
+    gap: 16px; /* Reduzido o gap entre os itens (regra do 8: 16px) */
 }
 
 .nav_item a {
     text-decoration: none;
     display: inline-block;
-    padding: 8px 16px;
-    background-color: #D1FF3E;
-    color: #003C0F; /* Texto verde escuro no botão */
+    padding: 8px 16px; /* Padding ajustado (regra do 8) */
+    background-color: transparent; /* Deixar com menos cara de botão */
+    color: #D1FF3E; /* Texto verde claro */
     font-weight: 600;
-    border-radius: 24px;
+    border-radius: 4px; /* Bordas mais sutis */
     transition: all 0.3s ease;
+    position: relative; /* Para o underline */
+}
+
+.nav_item a::after { /* Underline animado */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #D1FF3E;
+    transition: width 0.3s ease-out;
+}
+
+.nav_item a:hover::after {
+    width: 100%;
 }
 
 .nav_item a:hover {
-    background-color: #b8e038; /* Um pouco mais escuro */
-    transform: translateY(-2px); /* Efeito sutil de elevação */
+    color: #b8e038; /* Cor mais escura no hover */
+    /* transform: translateY(-2px); Removido o transform para não parecer botão */
 }
 
 #mobile_btn {
@@ -108,16 +143,20 @@ header#home::before { /* Sobreposição escura */
     border: none;
     background-color: transparent;
     color: #FFFFFF; /* Cor do ícone hamburguer */
-    font-size: 1.8rem;
+    font-size: 2rem; /* Aumentado */
     cursor: pointer;
 }
 
 #mobile_menu {
     display: none; /* Escondido por padrão */
-    background-color: rgba(0, 60, 15, 0.95); /* Fundo similar à navbar */
-    position: relative; /* Para z-index funcionar dentro do header */
-    z-index: 10; /* Abaixo da navbar, acima da sobreposição do hero */
-    padding: 20px 0;
+    background-color: rgba(0, 60, 15, 0.98); /* Fundo similar à navbar, mais opaco */
+    position: absolute; /* Ajustado para absolute para cobrir o conteúdo abaixo */
+    top: 72px; /* Altura da navbar */
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 24px 0; /* Padding ajustado (regra do 8: 24px) */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 #mobile_nav_lista {
@@ -125,83 +164,105 @@ header#home::before { /* Sobreposição escura */
     display: flex;
     flex-direction: column;
     align-items: center; /* Centraliza itens do menu mobile */
-    gap: 16px;
+    gap: 16px; /* Espaçamento ajustado (regra do 8: 16px) */
 }
 
 #mobile_nav_lista .nav_item a { /* Reutiliza o estilo dos botões da navbar */
-    width: 150px; /* Define uma largura para melhor toque */
+    background-color: #D1FF3E; /* Botões no menu mobile */
+    color: #003C0F;
+    padding: 12px 24px;
+    border-radius: 24px;
+    width: 200px; /* Largura fixa para mobile */
     text-align: center;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
+#mobile_nav_lista .nav_item a:hover {
+    background-color: #b8e038;
+}
 
 /* --- Conteúdo Hero --- */
 .hero_content_container {
     text-align: center;
-    padding: 80px 20px 40px; /* Espaçamento interno */
+    padding: 100px 24px 64px; /* Espaçamento interno maior (regra do 8) */
     position: relative;
     z-index: 2; /* Acima da sobreposição */
+    max-width: 800px; /* Limita a largura do texto para melhor leitura */
+    margin: 0 auto;
 }
 
 .hero_content_container h1 {
-    font-size: 3.2rem; /* Ajuste conforme o Figma */
+    font-size: 3.6rem; /* Ajuste conforme o Figma */
     font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 24px; /* Espaçamento ajustado (regra do 8: 24px) */
+    line-height: 1.3;
+    text-shadow: 0px 4px 8px rgba(0,0,0,0.5); /* Sombra mais pronunciada */
 }
 
 .hero_content_container p {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    max-width: 600px;
+    font-size: 1.4rem;
+    margin-bottom: 48px; /* Espaçamento ajustado (regra do 8: 48px) */
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
-    text-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.4);
 }
 
 .button.hero_button { /* Botão específico do Hero */
     background-color: #D1FF3E; /* Verde claro amarelado */
     color: #003C0F; /* Texto verde escuro */
-    padding: 14px 40px;
-    border-radius: 30px;
+    padding: 16px 48px; /* Padding ajustado (regra do 8) */
+    border-radius: 32px; /* Bordas mais arredondadas (regra do 8) */
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Aumentado */
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Sombra mais forte */
 }
 
 .button.hero_button:hover {
     background-color: #b8e038;
-    transform: translateY(-3px);
+    transform: translateY(-4px); /* Efeito sutil de elevação (regra do 4: 4px) */
 }
 
 /* --- Estilos Gerais de Seção --- */
 main section {
-    padding: 60px 0;
+    padding: 96px 0; /* Aumentado espaçamento entre seções (regra do 8: 96px) */
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo da seção fique acima do background */
 }
 
 main section h2 {
-    font-size: 2.5em;
+    font-size: 3.2em; /* Aumentado */
     color: #003C0F; /* Verde escuro */
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px; /* Espaçamento ajustado (regra do 8: 48px) */
+    position: relative;
+    font-weight: 700;
+}
+
+main section h2::after { /* Underline decorativo */
+    content: '';
+    display: block;
+    width: 80px; /* Largura ajustada (regra do 8: 80px) */
+    height: 4px; /* Espessura ajustada (regra do 4: 4px) */
+    background-color: #D1FF3E;
+    margin: 12px auto 0; /* Espaçamento ajustado (regra do 4: 12px) */
+    border-radius: 2px;
 }
 
 main section .container > p { /* Parágrafo introdutório da seção */
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    font-size: 1.1em;
-    color: #333;
+    max-width: 800px;
+    margin: 0 auto 48px auto; /* Espaçamento ajustado (regra do 8: 48px) */
+    font-size: 1.2em;
+    color: #444;
 }
 
 /* --- Seção Sobre a ONG --- */
 #sobre {
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
+    padding: 96px 0; /* Consistente com outras seções */
 }
 
 #sobre .container {
@@ -210,31 +271,23 @@ main section .container > p { /* Parágrafo introdutório da seção */
     align-items: center;
 }
 
-#sobre h2 {
-    font-size: 2.8rem;
-    color: #003C0F;
-    text-align: center;
-    margin-bottom: 32px;
-    position: relative;
-}
-
 .sobre-content {
-    max-width: 900px;
+    max-width: 960px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 56px; /* Espaçamento maior (regra do 8: 56px) */
 }
 
 .sobre-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 16px;
+    font-size: 1.3rem; /* Aumentado */
+    line-height: 1.7;
+    margin-bottom: 24px; /* Espaçamento ajustado (regra do 8: 24px) */
 }
 
 .sobre-imagens {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha pelo topo */
-    gap: 20px;
+    align-items: flex-start;
+    gap: 32px; /* Espaçamento maior entre imagens (regra do 8: 32px) */
     margin-top: 40px;
     width: 100%;
     flex-wrap: wrap;
@@ -242,49 +295,49 @@ main section .container > p { /* Parágrafo introdutório da seção */
 
 .sobre-imagens img {
     width: 100%;
-    max-width: 500px; 
-    height: auto;
+    max-width: 540px; /* Ajustado para melhor visualização em desktop */
+    height: 360px; /* Altura fixa para consistência */
     border-radius: 12px;
     object-fit: cover;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.12);
+    box-shadow: 0px 12px 32px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
     transition: all 0.4s ease;
 }
 
 .sobre-imagens img:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-12px); /* Efeito sutil de elevação (regra do 4: 12px) */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* --- Seção Como Você Pode Ajudar --- */
 .ajuda-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo */
-    gap: 30px;
-    margin-top: 40px;
+    gap: 32px; /* Espaçamento ajustado (regra do 8: 32px) */
+    margin-top: 56px; /* Espaçamento maior (regra do 8: 56px) */
 }
 
 .ajuda-item {
-    width: 100%; /* Ocupa a célula do grid */
-    aspect-ratio: 1 / 1; /* Mantém o item quadrado para ser um círculo perfeito */
+    width: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.15); /* Sombra mais forte */
     transition: transform 0.3s ease;
 }
 .ajuda-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.08); /* Efeito de escala mais pronunciado */
 }
 
 .ajuda-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cobre o círculo sem distorcer */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 .ajuda-item:hover img {
-    transform: scale(1.1); /* Efeito de zoom na imagem interna */
+    transform: scale(1.15); /* Efeito de zoom mais forte */
 }
 
 .ajuda-item-overlay {
@@ -293,35 +346,49 @@ main section .container > p { /* Parágrafo introdutório da seção */
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 60, 15, 0.7); /* Verde escuro semi-transparente */
+    background-color: rgba(0, 60, 15, 0.85); /* Verde escuro mais opaco */
     color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
-    opacity: 1; /* Começa visível */
-    transition: opacity 0.3s ease;
+    padding: 24px; /* Padding ajustado (regra do 8: 24px) */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.4s ease; /* Transição mais suave */
 }
 .ajuda-item:hover .ajuda-item-overlay {
-    opacity: 0.85; /* Pode ajustar a opacidade no hover */
+    opacity: 1; /* Fica totalmente visível no hover */
 }
 
 .ajuda-item-overlay p {
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
-/* --- Seção Impactos --- */
+/* --- Seção Impactos (Mais coesa) --- */
+#impacto {
+    padding-top: 96px; /* Consistente com outras seções */
+    padding-bottom: 96px; /* Consistente com outras seções */
+    background-color: #e6f7e6; /* Fundo suave para unificar a seção */
+}
+
+.impacto-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espaçamento entre os elementos do impacto (regra do 8: 40px) */
+}
+
 .impacto-barra-wrapper {
     background-color: #003C0F; /* Verde escuro */
     overflow: hidden;
-    margin: 0 0 40px 0; /* Margem apenas embaixo */
     position: relative;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-top: 24px; /* Espaçamento abaixo do h2 */
 }
 .impacto-barra-carrossel { 
     display: flex;
-    width: 300%;
+    width: 300%; /* Para 3 itens */
     transition: transform 0.8s ease-in-out;
     height: 100%;
 }
@@ -331,8 +398,8 @@ main section .container > p { /* Parágrafo introdutório da seção */
     width: calc(100% / 3);
     text-align: center;
     color: #FFFFFF;
-    padding: 25px 20px;
-    font-size: 1.5em;
+    padding: 32px 24px; /* Padding ajustado (regra do 8) */
+    font-size: 1.6em; /* Aumentado */
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -345,17 +412,17 @@ main section .container > p { /* Parágrafo introdutório da seção */
 }
 
 .impacto-imagem {
-    margin-top: 40px;
-    padding: 0 15px;
+    padding: 0 16px; /* Ajustado padding */
+    margin-top: 0; /* Removido margin-top, controlado pelo gap do wrapper */
 }
 
 .impacto-imagem-wrapper {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 500px; /* Altura aumentada */
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.18); /* Sombra mais pronunciada */
 }
 
 .impacto-imagem-carrossel {
@@ -377,140 +444,201 @@ main section .container > p { /* Parágrafo introdutório da seção */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 60, 15, 0.7);
+    background-color: rgba(0, 60, 15, 0.75); /* Mais opaco */
     color: #FFFFFF;
     border: none;
-    padding: 15px;
+    padding: 16px; /* Padding ajustado (regra do 8: 16px) */
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.6em; /* Aumentado */
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 56px; /* Tamanho ajustado (regra do 8: 56px) */
+    height: 56px; /* Tamanho ajustado (regra do 8: 56px) */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3 ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     z-index: 10;
 }
 
 .carrossel-control:hover {
-    background-color: rgba(0, 60, 15, 0.9);
+    background-color: rgba(0, 60, 15, 0.95);
+    transform: translateY(-50%) scale(1.05); /* Pequeno efeito de escala */
 }
 
 .carrossel-control.prev {
-    left: 10px;
+    left: 16px; /* Ajustado (regra do 8: 16px) */
 }
 
 .carrossel-control.next {
-    right: 10px;
+    right: 16px; /* Ajustado (regra do 8: 16px) */
 }
 
 .carrossel-dots {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 24px; /* Espaçamento ajustado (regra do 8: 24px) */
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px; /* Espaçamento entre dots (regra do 4: 12px) */
 }
 
 .dot {
-    height: 12px;
-    width: 12px;
-    background-color: #ccc;
+    height: 14px; /* Aumentado (regra do 4: 14px) */
+    width: 14px; /* Aumentado (regra do 4: 14px) */
+    background-color: #b3b3b3;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-    transition: background-color 0.3s ease, transfomr 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .dot.active {
     background-color: #003C0F;
-    transform: scale(1.2);
+    transform: scale(1.3); /* Efeito de escala maior */
 }
 
-.dor:hover {
-    background-color: #999;
+.dot:hover {
+    background-color: #888;
 }
 
-/* --- Seção Formulário --- */
+/* --- Seção Formulário (Enfatizada) --- */
 #formulario-secao {
-    background-color: #e9f5a9; /* Um tom ligeiramente diferente do body para destaque, ou use o mesmo #F2FFCA */
-    padding: 60px 0;
+    background-color: #e9f5a9; /* Um tom ligeiramente diferente do body para destaque */
+    padding: 96px 0; /* Aumentado espaçamento (regra do 8: 96px) */
+}
+
+#formulario-secao h2 {
+    font-size: 3.2em; /* Aumentado */
+    margin-bottom: 24px; /* Espaçamento abaixo do h2 */
+}
+
+#formulario-secao .form-intro-text {
+    font-size: 1.3em; /* Aumentado */
+    max-width: 760px; /* Largura maior */
+    margin: 0 auto 56px auto; /* Espaçamento ajustado (regra do 8: 56px) */
+    color: #555;
+    text-align: center;
 }
 
 #formulario-secao form {
-    max-width: 600px;
+    max-width: 680px; /* Formulário mais largo (regra do 8: 680px) */
     margin: 0 auto;
     background-color: #FFFFFF; /* Fundo branco para o formulário */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    padding: 48px; /* Padding maior (regra do 8: 48px) */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.15); /* Sombra mais forte */
 }
 
 #formulario-secao form div {
-    margin-bottom: 20px;
+    margin-bottom: 24px; /* Espaçamento ajustado (regra do 8: 24px) */
 }
 
 #formulario-secao label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+    margin-bottom: 8px; /* Espaçamento ajustado (regra do 8: 8px) */
+    font-weight: 600; /* Mais negrito */
     color: #003C0F;
+    font-size: 1.1em;
 }
 
 #formulario-secao input[type="text"],
 #formulario-secao input[type="email"],
 #formulario-secao select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Bordas bem arredondadas */
-    font-size: 1em;
+    padding: 14px 20px; /* Padding maior (regra do 4: 14px, 20px) */
+    border: 1px solid #d4d4d4; /* Borda mais suave */
+    border-radius: 28px; /* Bordas bem arredondadas (regra do 4: 28px) */
+    font-size: 1.05em;
+    color: #333;
 }
 #formulario-secao input[type="text"]:focus,
 #formulario-secao input[type="email"]:focus,
 #formulario-secao select:focus {
     outline: none;
-    border-color: #003C0F; /* Destaque verde escuro no foco */
-    box-shadow: 0 0 0 2px rgba(0, 60, 15, 0.2);
+    border-color: #004d13; /* Destaque verde escuro mais vibrante no foco */
+    box-shadow: 0 0 0 4px rgba(0, 60, 15, 0.25); /* Sombra maior no foco (regra do 4: 4px) */
 }
-
 
 .button.form_button { /* Estilo do botão do formulário */
     background-color: #D1FF3E; /* Verde claro amarelado */
     color: #003C0F; /* Texto verde escuro */
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: 16px 32px; /* Padding maior (regra do 8: 16px, 32px) */
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1em;
-    border: none; /* Remove borda padrão do button */
+    font-weight: 700;
+    font-size: 1.2em; /* Aumentado */
+    border: none;
     cursor: pointer;
-    display: block; /* Para ocupar a largura total ou use width: 100% */
+    display: block;
     width: 100%;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15); /* Sombra para o botão */
 }
 
 .button.form_button:hover {
     background-color: #b8e038;
-    transform: translateY(-2px);
+    transform: translateY(-3px); /* Efeito de elevação (regra do 4: 3px) */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.25);
 }
 
-/* --- Footer --- */
+/* --- Footer (Incrementado) --- */
 footer {
     background-color: #003C0F; /* Verde escuro */
     color: #e0e0e0; /* Texto claro */
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 0; /* Removido margin-top para que a seção anterior defina o espaço */
+    padding: 48px 24px; /* Padding aumentado (regra do 8: 48px, 24px) */
+    margin-top: 0;
 }
-footer p {
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* Espaçamento entre os itens do footer (regra do 8: 16px) */
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaçamento ajustado (regra do 8: 8px) */
     margin-bottom: 8px;
+}
+.footer-logo img {
+    height: 56px; /* Tamanho da logo no footer (regra do 8: 56px) */
+}
+.footer-logo span {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #D1FF3E;
+}
+
+footer p {
+    margin-bottom: 8px; /* Espaçamento ajustado (regra do 8: 8px) */
+    font-size: 1em;
+    line-height: 1.5;
 }
 footer p:last-child {
     margin-bottom: 0;
 }
 
+.footer-social {
+    margin-top: 16px; /* Espaçamento (regra do 8: 16px) */
+    display: flex;
+    gap: 24px; /* Espaçamento entre ícones sociais (regra do 8: 24px) */
+}
+.footer-social a {
+    color: #D1FF3E;
+    font-size: 1.8rem; /* Tamanho dos ícones sociais (regra do 4: 1.8rem) */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.footer-social a:hover {
+    color: #b8e038;
+    transform: translateY(-4px); /* Efeito de elevação (regra do 4: 4px) */
+}
+
+.footer-contact {
+    margin-top: 24px; /* Espaçamento (regra do 8: 24px) */
+    font-size: 0.95em;
+    color: #c0c0c0;
+}
 
 /* --- Media Queries para Responsividade --- */
 @media screen and (max-width: 1000px) { /* Ponto de quebra do seu menu mobile */
@@ -524,118 +652,223 @@ footer p:last-child {
         width: 95%;
     }
     #mobile_menu.active { /* Mostrar menu mobile quando ativo */
-        display: block; /* Ou flex se precisar de alinhamento complexo dos itens */
+        display: block;
     }
     .hero_content_container h1 {
-        font-size: 2.5em;
+        font-size: 3rem; /* Ajustado */
     }
     .hero_content_container p {
-        font-size: 1.1em;
+        font-size: 1.2rem; /* Ajustado */
     }
-
+    main section h2 {
+        font-size: 2.8em;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .container {
         width: 95%;
+        padding: 0 12px; /* Ajustado (regra do 4: 12px) */
     }
     .hero_content_container h1 {
-        font-size: 2.2em;
+        font-size: 2.5em;
+        margin-bottom: 16px;
     }
     .hero_content_container p {
-        font-size: 1em;
+        font-size: 1.1em;
+        margin-bottom: 32px;
     }
     .button.hero_button {
-        padding: 10px 20px;
+        padding: 12px 32px;
+        font-size: 1.1em;
+    }
+
+    main section {
+        padding: 64px 0; /* Reduzido espaçamento entre seções (regra do 8: 64px) */
+    }
+    main section h2 {
+        font-size: 2.4em;
+        margin-bottom: 32px;
+    }
+    main section .container > p {
         font-size: 1em;
+        margin-bottom: 32px;
     }
 
     .sobre-imagens {
         flex-direction: column;
         align-items: center;
+        gap: 24px; /* Reduzido o gap (regra do 8: 24px) */
     }
     .sobre-imagens img {
-        max-width: 90%; /* Imagens empilhadas */
-        height: 300px;
-        margin-bottom: 20px;
-    }
-    .sobre-imagens img:last-child {
+        max-width: 95%; /* Imagens empilhadas */
+        height: 280px; /* Altura ajustada */
         margin-bottom: 0;
     }
 
     .ajuda-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste para telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduzido o min-width para mobile */
+        gap: 24px; /* Reduzido o gap (regra do 8: 24px) */
+        margin-top: 32px;
+    }
+    .ajuda-item-overlay p {
+        font-size: 1em; /* Reduzido o tamanho da fonte */
     }
 
     .item-carrossel {
-        font-size: 1.2em;
-        padding: 20px 15px;
+        font-size: 1.4em;
+        padding: 24px 16px;
     }
 
-    #formulario-secao form {
-        padding: 20px;
+    .impacto-imagem-wrapper {
+        height: 380px; /* Altura ajustada */
     }
-    main section h2 {
-        font-size: 2em;
+    .carrossel-control {
+        font-size: 1.4em;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+    }
+    .carrossel-dots {
+        margin-top: 16px;
+        gap: 8px;
+    }
+
+    #formulario-secao {
+        padding: 64px 0;
+    }
+    #formulario-secao h2 {
+        font-size: 2.4em;
+        margin-bottom: 20px;
+    }
+    #formulario-secao .form-intro-text {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+    #formulario-secao form {
+        padding: 32px;
+    }
+    #formulario-secao form div {
+        margin-bottom: 16px;
+    }
+    #formulario-secao label {
+        font-size: 1em;
+    }
+    #formulario-secao input[type="text"],
+    #formulario-secao input[type="email"],
+    #formulario-secao select {
+        padding: 12px 16px;
+        font-size: 0.95em;
+    }
+    .button.form_button {
+        padding: 14px 28px;
+        font-size: 1.1em;
+    }
+
+    footer {
+        padding: 32px 16px;
+    }
+    .footer-logo img {
+        height: 48px;
+    }
+    .footer-logo span {
+        font-size: 1.4rem;
+    }
+    .footer-social {
+        gap: 16px;
+    }
+    .footer-social a {
+        font-size: 1.5rem;
+    }
+    .footer-contact {
+        font-size: 0.85em;
     }
 }
 
 @media screen and (max-width: 480px) {
     .hero_content_container h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
-     main section h2 {
-        font-size: 1.8em;
-        margin-bottom: 25px;
+    .hero_content_container p {
+        font-size: 0.95em;
     }
+    main section h2 {
+        font-size: 2em;
+        margin-bottom: 24px;
+    }
+
+    .sobre-imagens img {
+        height: 200px;
+    }
+
     .ajuda-grid { /* Uma coluna em telas bem pequenas */
         grid-template-columns: 1fr;
+        gap: 20px;
     }
     .ajuda-item {
-        max-width: 300px; /* Limita largura do item em uma coluna */
+        max-width: 280px; /* Limita largura do item em uma coluna */
         margin: 0 auto; /* Centraliza */
     }
+    .ajuda-item-overlay p {
+        font-size: 0.9em;
+    }
+
     .item-carrossel {
-        font-size: 1em;
-        padding: 15px 10px;
+        font-size: 1.1em;
+        padding: 16px 12px;
     }
     .impacto-imagem-wrapper {
-        height: 250px;
+        height: 280px;
     }
     .carrossel-control {
-        font-size: 1em;
-        width: 35px;
-        height: 35px;
-        padding: 8px;
+        font-size: 1.2em;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
     }
     .dot {
         height: 10px;
         width: 10px;
     }
-}
 
-body {
-    position: relative; 
-    overflow-x: hidden;
-    min-height: 150vh; 
-    margin: 0; 
-}
-
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-
-    background-image: url('img/cacto.png'); 
-    background-repeat: repeat;
-    background-position: top left;
-    background-size: 750px;
-    background-attachment: scroll;
-    background-color: #F2FFCA;
-    opacity: 0.1;
+    #formulario-secao h2 {
+        font-size: 2em;
+        margin-bottom: 16px;
+    }
+    #formulario-secao .form-intro-text {
+        font-size: 1em;
+        margin-bottom: 32px;
+    }
+    #formulario-secao form {
+        padding: 24px;
+    }
+    #formulario-secao input[type="text"],
+    #formulario-secao input[type="email"],
+    #formulario-secao select {
+        padding: 10px 14px;
+        font-size: 0.9em;
+    }
+    .button.form_button {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+    
+    footer {
+        padding: 24px 12px;
+    }
+    .footer-logo img {
+        height: 40px;
+    }
+    .footer-logo span {
+        font-size: 1.2rem;
+    }
+    .footer-social {
+        gap: 12px;
+    }
+    .footer-social a {
+        font-size: 1.3rem;
+    }
+    .footer-contact {
+        font-size: 0.8em;
+    }
 }
