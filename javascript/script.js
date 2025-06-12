@@ -13,7 +13,7 @@ $(document).ready(function() {
             $('#mobile_btn').find('i').removeClass('fa-times').addClass('fa-bars');
         }
     });
-
+    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateCarrossel() {
+        // Calcula o quanto o carrossel deve se mover para a esquerda
+        // transform: translateX(-0%); para o primeiro item
+        // transform: translateX(-100%); para o segundo item
+        // transform: translateX(-200%); para o terceiro item
         const offset = -currentIndex * (100 / totalItems);
         carrossel.style.transform = `translateX(${offset}%)`;
     }
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Funções para controle do carrossel
         function updateImagemCarrossel() {
-            const offset = -currentImagemIndex * (100 / totalImagens);
+            const offset = -currentImagemIndex * (100 / totalImagens); // Ex: para 3 imagens, 0%, -100%, -200%
             imagemCarrossel.style.transform = `translateX(${offset}%)`;
             updateDots();
         }
