@@ -434,7 +434,7 @@ main section .container > p { /* Parágrafo introdutório da seção */
 
 /* --- Seção Formulário --- */
 #formulario-secao {
-    background-color: #e9f5a9; /* Um tom ligeiramente diferente do body para destaque, ou use o mesmo #F2FFCA */
+    background-color: #F2FFCA; /* Um tom ligeiramente diferente do body para destaque, ou use o mesmo #F2FFCA */
     padding: 60px 0;
 }
 
