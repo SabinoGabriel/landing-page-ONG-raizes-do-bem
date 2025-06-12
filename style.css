@@ -313,35 +313,48 @@ main section .container > p { /* Parágrafo introdutório da seção */
 }
 
 /* --- Seção Impactos --- */
-.impacto-barra-wrapper {
-    background-color: #003C0F; /* Verde escuro */
-    overflow: hidden;
-    margin: 0 0 40px 0; /* Margem apenas embaixo */
+.carrossel-imagem-container {
     position: relative;
-}
-.impacto-barra-carrossel { 
-    display: flex;
-    width: 300%;
-    transition: transform 0.8s ease-in-out;
-    height: 100%;
-}
-
-.item-carrossel {
     flex-shrink: 0;
-    width: calc(100% / 3);
-    text-align: center;
-    color: #FFFFFF;
-    padding: 25px 20px;
-    font-size: 1.5em;
-    font-weight: 600;
-    display: flex;
+    width: calc(100% / 3); 
+    height: 100%; 
+    display: flex; 
     align-items: center;
-    justify-content: center;
-    height: auto;
+    justify-content: center; 
+    overflow: hidden;
 }
 
-.item-carrossel p {
-    margin: 0;
+.carrossel-imagem-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.carrossel-imagem-container .carrossel-imagem-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carrossel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: #FFFFFF; 
+    font-size: 1.8em; 
+    font-weight: 700; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px; 
+    z-index: 5; 
 }
 
 .impacto-imagem {
