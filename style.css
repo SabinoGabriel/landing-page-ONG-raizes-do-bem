@@ -91,15 +91,13 @@ header#home::before { /* Sobreposição escura */
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    background-color: #D1FF3E;
-    color: #003C0F; /* Texto verde escuro no botão */
+    color: #FFFFFF; 
     font-weight: 600;
     border-radius: 24px;
     transition: all 0.3s ease;
 }
 
 .nav_item a:hover {
-    background-color: #b8e038; /* Um pouco mais escuro */
     transform: translateY(-2px); /* Efeito sutil de elevação */
 }
 
