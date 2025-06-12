@@ -637,3 +637,29 @@ body::before {
     background-color: #F2FFCA;
     opacity: 0.1;
 }
+
+.nav_item a {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    color: #FFFFFF; 
+    font-weight: 600;
+    border-radius: 24px;
+    transition: all 0.3s ease;
+}
+
+.nav_item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px; /* Ajuste a distância do sublinhado ao texto */
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav_item a:hover::after {
+    width: 100%;
+}
