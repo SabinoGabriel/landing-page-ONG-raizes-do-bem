@@ -17,6 +17,35 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    const carrossel = document.getElementById('impactoCarrossel');
+    if(!carrossel) {
+        console.warn('Carrossel de impacto não encontrado.');
+        return;
+    }
+
+    const items = carrossel.querySelectorAll('.item-carrossel');
+    const totalItems = items.length;
+    let currentIndex = 0;
+    const slideInterval = 5000; // 5 segundos
+
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarrossel();
+    }
+
+    function updateCarrossel() {
+        // Calcula o quanto o carrossel deve se mover para a esquerda
+        // transform: translateX(-0%); para o primeiro item
+        // transform: translateX(-100%); para o segundo item
+        // transform: translateX(-200%); para o terceiro item
+        const offset = -currentIndex * (100 / totalItems);
+        carrossel.style.transform = `translateX(${offset}%)`;
+    }
+
+    setInterval(showNextSlide, slideInterval);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     const imagemCarrossel = document.getElementById('imagemCarrossel');
     const prev = document.querySelector('.carrossel-control.prev');
     const next = document.querySelector('.carrossel-control.next');
