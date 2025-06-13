@@ -83,4 +83,3 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Elementos do carrossel de imagens não encontrados.');
     }   
 })
-
