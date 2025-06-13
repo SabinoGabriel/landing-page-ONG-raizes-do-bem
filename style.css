@@ -640,38 +640,55 @@ footer p:last-child {
 }
 
 @media screen and (max-width: 480px) {
-    .hero_content_container h1 {
-        font-size: 2.2rem;
-    }
-    .hero_content_container p {
-        font-size: 1rem;
-    }
-    main section h2 {
-        font-size: 1.8em;
-        margin-bottom: 25px;
-    }
-    .ajuda-grid {
-        grid-template-columns: 1fr;
-    }
-    .ajuda-item {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    .item-carrossel {
-        font-size: 1em;
-        padding: 15px 10px;
-    }
-    .impacto-imagem-wrapper {
-        height: 250px;
-    }
-    .carrossel-control {
-        font-size: 1em;
-        width: 35px;
-        height: 35px;
-        padding: 8px;
-    }
-    .dot {
-        height: 10px;
-        width: 10px;
-    }
+  .hero_content_container h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero_content_container p {
+    font-size: 1rem;
+  }
+
+  main section h2 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+  }
+
+  .ajuda-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .ajuda-item {
+    max-width: 135px; 
+    margin: 0;
+    font-size: 10px;
+  }
+
+  .item-carrossel {
+    font-size: 1em;
+    padding: 15px 10px;
+  }
+
+  .carrossel-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .impacto-imagem-wrapper {
+    height: 250px;
+  }
+
+  .carrossel-control {
+    font-size: 1em;
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
 }
