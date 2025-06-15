@@ -270,6 +270,7 @@ main section .container > p {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 16px;
+    color: #003C0F;
 }
 
 .sobre-imagens {
@@ -602,6 +603,8 @@ footer p:last-child {
     body::before {
         background-size: 560px; /*Pode ser ajustado*/
     }
+
+
     .hero_content_container {
         padding: 100px 20px 60px;
     }
@@ -660,7 +663,31 @@ footer p:last-child {
     font-size: 1.5em;
     margin-bottom: 25px;
   }
-
+  #sobre h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .sobre-content p {
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 10px auto 20px auto;
+    max-width: 90%;
+    text-align: center;
+  }
+  .sobre-imagens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: -35px;
+  }
+  .sobre-imagens img {
+    max-width: 90%;
+    height: auto;
+  }
   .ajuda-grid { 
     display: grid;
     grid-template-columns: repeat(2, 1fr); /*Duas colunas de imagens*/
