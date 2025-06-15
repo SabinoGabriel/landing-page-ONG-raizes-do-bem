@@ -639,8 +639,13 @@ footer p:last-child {
         margin-bottom: 0;
     }
     .ajuda-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
     }
+    .ajuda-item {
+    max-width: 200px; /*Tamanho das imagens*/
+    margin: 0;
+    font-size: 17px; /*Tamanho do texto dentro das imagens*/
+   }
  ;   .item-carrossel {
         font-size: 1.2em;
         padding: 20px 15px;
