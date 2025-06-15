@@ -300,13 +300,17 @@ main section .container > p {
 /* --- Seção Como Você Pode Ajudar --- */
 .ajuda-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* sempre 3 colunas */
     gap: 30px;
     margin-top: 40px;
+    max-height: 720px;
+    overflow-y: hidden;
+    padding: 20px;
+    justify-items: center;
 }
 
 .ajuda-item {
-    width: 100%;
+    width: 200px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
@@ -315,6 +319,7 @@ main section .container > p {
     box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
+
 .ajuda-item:hover {
     transform: scale(1.05);
 }
@@ -325,6 +330,7 @@ main section .container > p {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
+
 .ajuda-item:hover img {
     transform: scale(1.1);
 }
