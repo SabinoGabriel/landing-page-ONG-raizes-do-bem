@@ -49,11 +49,11 @@ body::before {
 
 /* --- Header e Navbar --- */
 header#home {
+    position: relative;
     background-image: url('img/imgheader.png'); 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    position: relative;
     color: #FFFFFF;
     height: 619px; 
     display: flex;
@@ -72,11 +72,11 @@ header#home::before {
 }
 
 #navbar {
+    position: relative;
+    z-index: 3;
     width: 100%;
     padding: 15px 0;
     background-color: rgba(0, 60, 15, 0.9);
-    position: relative;
-    z-index: 3;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     flex-shrink: 0;
 }
@@ -91,13 +91,13 @@ header#home::before {
 }
 
 #nav_logo_link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.4rem;
     font-weight: 700;
     color: #FFFFFF;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 12px;
 }
 
 #logo {
@@ -112,14 +112,14 @@ header#home::before {
 }
 
 .nav_item a {
-    text-decoration: none;
+    position: relative;
     display: inline-block;
     padding: 8px 16px;
     color: #FFFFFF; 
     font-weight: 600;
+    text-decoration: none;
     border-radius: 24px;
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .nav_item a:hover {
@@ -152,9 +152,9 @@ header#home::before {
 
 #mobile_menu {
     display: none;
-    background-color: rgba(0, 60, 15, 0.95);
     position: relative;
     z-index: 10;
+    background-color: rgba(0, 60, 15, 0.95);
     padding: 20px 0;
 }
 
@@ -173,15 +173,15 @@ header#home::before {
 
 /* --- Conteúdo Hero --- */
 .hero_content_container {
-    text-align: center;
     position: relative;
     z-index: 2;
-    padding: 20px;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
 }
 
 .hero_content_container h1 {
@@ -241,9 +241,9 @@ main section .container > p {
 
 /* --- Seção Sobre a ONG --- */
 #sobre {
-    padding: 100px 0;
     position: relative;
     overflow: hidden;
+    padding: 100px 0;
 }
 
 #sobre .container {
@@ -253,11 +253,11 @@ main section .container > p {
 }
 
 #sobre h2 {
+    position: relative;
     font-size: 2.8rem;
     color: #003C0F;
     text-align: center;
     margin-bottom: 32px;
-    position: relative;
 }
 
 .sobre-content {
@@ -270,6 +270,7 @@ main section .container > p {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 16px;
+    color: #003C0F;
 }
 
 .sobre-imagens {
@@ -315,6 +316,7 @@ main section .container > p {
     box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
+
 .ajuda-item:hover {
     transform: scale(1.05);
 }
@@ -325,6 +327,7 @@ main section .container > p {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
+
 .ajuda-item:hover img {
     transform: scale(1.1);
 }
@@ -345,6 +348,7 @@ main section .container > p {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+
 .ajuda-item:hover .ajuda-item-overlay {
     opacity: 0.85;
 }
@@ -444,7 +448,7 @@ main section .container > p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3 ease;
+    transition: background-color 0.3s ease;
     z-index: 10;
 }
 
@@ -461,11 +465,11 @@ main section .container > p {
 }
 
 .carrossel-dots {
-    text-align: center;
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 10px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .dot {
@@ -475,7 +479,7 @@ main section .container > p {
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-    transition: background-color 0.3s ease, transfomr 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .dot.active {
@@ -521,6 +525,7 @@ main section .container > p {
     border-radius: 20px;
     font-size: 1em;
 }
+
 #formulario-secao input[type="text"]:focus,
 #formulario-secao input[type="email"]:focus,
 #formulario-secao select:focus {
@@ -557,9 +562,11 @@ footer {
     padding: 40px 20px;
     margin-top: 0;
 }
+
 footer p {
     margin-bottom: 8px;
 }
+
 footer p:last-child {
     margin-bottom: 0;
 }
@@ -597,6 +604,9 @@ footer p:last-child {
     }
     header#home {
         height: auto; 
+    }
+    body::before {
+        background-size: 560px;
     }
     .hero_content_container {
         padding: 100px 20px 60px;
@@ -640,59 +650,78 @@ footer p:last-child {
 }
 
 @media screen and (max-width: 480px) {
-  .hero_content_container h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero_content_container p {
-    font-size: 1rem;
-  }
-
-  main section h2 {
-    font-size: 1.5em;
-    margin-bottom: 25px;
-  }
-
-  .ajuda-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    text-align: center;
-  }
-  
-  .ajuda-item {
-    max-width: 135px; 
-    margin: 0;
-    font-size: 10px;
-  }
-
-  .item-carrossel {
-    font-size: 1em;
-    padding: 15px 10px;
-  }
-
-  .carrossel-text {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 1);
-  }
-
-  .impacto-imagem-wrapper {
-    height: 250px;
-  }
-
-  .carrossel-control {
-    font-size: 1em;
-    width: 35px;
-    height: 35px;
-    padding: 8px;
-  }
-
-  .dot {
-    height: 10px;
-    width: 10px;
-  }
+    .hero_content_container h1 {
+        font-size: 2.2rem;
+    }
+    .hero_content_container p {
+        font-size: 1rem;
+    }
+    body::before {
+        background-size: 370px;
+    }
+    main section h2 {
+        font-size: 1.5em;
+        margin-bottom: 25px;
+    }
+    #sobre h2 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .sobre-content p {
+        font-size: 0.9em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin: 10px auto 20px auto;
+        max-width: 90%;
+        text-align: center;
+    }
+    .sobre-imagens {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-top: -35px;
+    }
+    .sobre-imagens img {
+        max-width: 90%;
+        height: auto;
+    }
+    .ajuda-grid { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        text-align: center;
+    }
+    .ajuda-item {
+        max-width: 135px;
+        margin: 0;
+        font-size: 10px;
+    }
+    .item-carrossel {
+        font-size: 1em;
+        padding: 15px 10px;
+    }
+    .carrossel-text {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 1);
+    }
+    .impacto-imagem-wrapper {
+        height: 250px;
+    }
+    .carrossel-control {
+        font-size: 1em;
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
 }
 
+/* --- Footer Customizado --- */
 .footer {
     background-color: #003C0F;
     padding: 40px 20px;
