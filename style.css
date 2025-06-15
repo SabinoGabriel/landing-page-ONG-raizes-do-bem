@@ -751,3 +751,109 @@ footer p:last-child {
     margin: 0; /* Remove default paragraph margin */
     color: white; /* Ensure contact text is white */
 }
+
+/* --- Seção de Curiosidades --- */
+#curiosidades {
+    padding: 60px 0; /* padding superior e inferior */
+    background-color: #F2FFCA; /* Cor de fundo principal do body, para manter a consistência */
+    color: #333; /* Cor de texto padrão */
+}
+
+#curiosidades .container {
+    max-width: 900px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    text-align: left; /* Alinhamento do texto padrão */
+    padding: 0 15px; /* Padding lateral, como o .container global */
+}
+
+#curiosidades h2 {
+    font-size: 2.5em; /* Tamanho do título principal da seção */
+    color: #003C0F; /* Cor verde escura do seu site */
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+#curiosidades p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify; /* Justifica o texto para melhor leitura em blocos */
+    color: #333; /* Cor do texto dos parágrafos */
+}
+
+.curiosidade-item {
+    background-color: #FFFFFF; /* Fundo branco para os cards de curiosidade */
+    border-left: 5px solid #D1FF3E; /* Borda esquerda com a cor de destaque do seu botão */
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para hover */
+}
+
+.curiosidade-item:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada */
+}
+
+.curiosidade-item h3 {
+    font-size: 1.5em;
+    color: #003C0F; /* Cor verde escura para os subtítulos */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.curiosidade-item p {
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 0; /* Remove a margem inferior extra para parágrafos dentro dos itens */
+    color: #333;
+}
+
+/* --- Responsividade para a seção de curiosidades --- */
+@media (max-width: 768px) {
+    #curiosidades {
+        padding: 40px 0;
+    }
+
+    #curiosidades h2 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    #curiosidades p {
+        font-size: 1em;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    .curiosidade-item {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+    }
+
+    .curiosidade-item h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    #curiosidades h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    #curiosidades p {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .curiosidade-item {
+        padding: 12px 15px;
+    }
+
+    .curiosidade-item h3 {
+        font-size: 1.2em;
+    }
+}
