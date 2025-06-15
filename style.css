@@ -608,7 +608,7 @@ footer p:last-child {
 
 
     body::before {
-        background-size: 560px; /*Pode ser ajustado*/
+        background-size: 200px; /*Pode ser ajustado*/
     }
 
 
@@ -720,12 +720,16 @@ footer p:last-child {
   }
 
   .carrossel-text {
-    font-size: 12px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 1);
   }
 
   .impacto-imagem-wrapper {
-    height: 250px;
+    height: 460px;
+    max-width: 300px;
+    align-items: center;
+    margin: 10px;
+    margin-top: -20px;
   }
 
   .carrossel-control {
