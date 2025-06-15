@@ -598,6 +598,10 @@ footer p:last-child {
     header#home {
         height: auto; 
     }
+
+    body::before {
+        background-size: 560px; /*Pode ser ajustado*/
+    }
     .hero_content_container {
         padding: 100px 20px 60px;
     }
@@ -627,7 +631,7 @@ footer p:last-child {
     .ajuda-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    .item-carrossel {
+ ;   .item-carrossel {
         font-size: 1.2em;
         padding: 20px 15px;
     }
@@ -648,22 +652,26 @@ footer p:last-child {
     font-size: 1rem;
   }
 
+  body::before {
+    background-size: 370px; /*Ajuste do tamanhp dos cactos ao fundo*/
+  }
+
   main section h2 {
     font-size: 1.5em;
     margin-bottom: 25px;
   }
 
-  .ajuda-grid {
+  .ajuda-grid { 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /*Duas colunas de imagens*/
     gap: 25px;
     text-align: center;
   }
   
   .ajuda-item {
-    max-width: 135px; 
+    max-width: 135px; /*Tamanho das imagens*/
     margin: 0;
-    font-size: 10px;
+    font-size: 10px; /*Tamanho do texto dentro das imagens*/
   }
 
   .item-carrossel {
