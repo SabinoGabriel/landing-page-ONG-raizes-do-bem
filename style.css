@@ -301,13 +301,17 @@ main section .container > p {
 /* --- Seção Como Você Pode Ajudar --- */
 .ajuda-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* sempre 3 colunas */
     gap: 30px;
     margin-top: 40px;
+    max-height: 720px;
+    overflow-y: hidden;
+    padding: 20px;
+    justify-items: center;
 }
 
 .ajuda-item {
-    width: 100%;
+    width: 200px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
@@ -348,7 +352,6 @@ main section .container > p {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
-
 .ajuda-item:hover .ajuda-item-overlay {
     opacity: 0.85;
 }
@@ -605,13 +608,9 @@ footer p:last-child {
     header#home {
         height: auto; 
     }
-
-
     body::before {
-        background-size: 200px; /*Pode ser ajustado*/
+        background-size: 200px;
     }
-
-
     .hero_content_container {
         padding: 100px 20px 60px;
     }
@@ -638,15 +637,52 @@ footer p:last-child {
     .sobre-imagens img:last-child {
         margin-bottom: 0;
     }
+
     .ajuda-grid {
-        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     .ajuda-item {
-    max-width: 200px; /*Tamanho das imagens*/
-    margin: 0;
-    font-size: 17px; /*Tamanho do texto dentro das imagens*/
-   }
- ;   .item-carrossel {
+        width: 100%;
+        max-width: 180px;
+        min-width: 110px;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 1em; /* ou ajuste conforme desejar */
+    }
+    .ajuda-item-overlay {
+        padding: 8px !important;
+        font-size: 0.98em;
+        word-break: break-word;
+        hyphens: auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ajuda-item-overlay p {
+        font-size: 0.98em;
+        line-height: 1.2;
+        max-width: 90%;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    .item-carrossel {
         font-size: 1.2em;
         padding: 20px 15px;
     }
@@ -659,7 +695,6 @@ footer p:last-child {
 }
 @media screen and (max-width: 480px) {
 
-
   .hero_content_container h1 {
     font-size: 2.2rem;
   }
@@ -669,19 +704,20 @@ footer p:last-child {
   }
 
   body::before {
-    background-size: 370px; /*Ajuste do tamanhp dos cactos ao fundo*/
+    background-size: 370px;
   }
 
   main section h2 {
     font-size: 1.5em;
     margin-bottom: 25px;
   }
+
   #sobre h2 {
     font-size: 1.4em;
     margin-bottom: 10px;
     text-align: center;
   }
-  
+
   .sobre-content p {
     font-size: 0.9em;
     margin-top: 10px;
@@ -690,6 +726,7 @@ footer p:last-child {
     max-width: 90%;
     text-align: center;
   }
+
   .sobre-imagens {
     display: flex;
     flex-direction: column;
@@ -701,17 +738,48 @@ footer p:last-child {
     max-width: 90%;
     height: auto;
   }
-  .ajuda-grid { 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /*Duas colunas de imagens*/
-    gap: 25px;
-    text-align: center;
+
+  .ajuda-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
-  
   .ajuda-item {
-    max-width: 135px; /*Tamanho das imagens*/
-    margin: 0;
-    font-size: 10px; /*Tamanho do texto dentro das imagens*/
+    width: 100%;
+    max-width: 41vw;
+    min-width: 100px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 0.96em;
+  }
+  .ajuda-item-overlay {
+    padding: 6px !important;
+    font-size: 0.92em;
+    word-break: break-word;
+    hyphens: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ajuda-item-overlay p {
+    font-size: 0.93em;
+    line-height: 1.18;
+    max-width: 90%;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .item-carrossel {
@@ -744,11 +812,10 @@ footer p:last-child {
     width: 10px;
   }
 
-
   /* --- SEÇÃO SOBRE A ONG --- */
   #sobre h2 {
-    font-size: 1.35em;           /* Reduzido para economizar altura, mas ainda destacado */
-    margin-bottom: 14px;         /* Menos espaço abaixo do título */
+    font-size: 1.35em;
+    margin-bottom: 14px;
     text-align: center;
     width: 100%;
   }
@@ -757,17 +824,17 @@ footer p:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 12px;         /* Menos espaço abaixo do texto */
+    margin-bottom: 12px;
     width: 100%;
   }
   .sobre-content p {
     width: 82vw;
     max-width: 275px;
     min-width: 140px;
-    font-size: 0.96em;           /* Fonte menor, ainda legível */
-    line-height: 1.37;           /* Menor altura de linha para caber mais texto */
+    font-size: 0.96em;
+    line-height: 1.37;
     text-align: center;
-    margin: 0 auto 8px auto;     /* Menos espaço entre parágrafos */
+    margin: 0 auto 8px auto;
     color: #003C0F;
     background: none;
   }
@@ -784,7 +851,7 @@ footer p:last-child {
     width: 276px;
     height: 184px;
     max-width: 100vw;
-    max-height: 51vw; /* Segurança para não vazar em telas mais estreitas */
+    max-height: 51vw;
     object-fit: cover;
     aspect-ratio: 3/2;
     display: block;
@@ -793,7 +860,6 @@ footer p:last-child {
     box-shadow: 0px 6px 18px rgba(0,0,0,0.10);
   }
 }
-
 /* --- Footer Customizado --- */
 .footer {
     background-color: #003C0F;
