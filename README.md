@@ -13,6 +13,8 @@ A página é dividida em seções claras e intuitivas para guiar o usuário:
 * **Seção Formulário:** Oferece um formulário simples para que os interessados possam se cadastrar para se voluntariar ou receber informativos, coletando nome, email e a forma desejada de ajuda.
 * **Seção Curiosidades:** Explora a inspiração por trás do símbolo da ONG, o Baobá, destacando como essa árvore milenar representa a força das raízes, resiliência e a missão de nutrir o sertão com esperança, educação e saúde.
 
+![Imagem do site](img/raizes_do_bem.png)
+
 ## 🛠 Ferramentas Utilizadas
 
 As seguintes ferramentas e tecnologias foram utilizadas no desenvolvimento deste projeto:
