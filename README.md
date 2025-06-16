@@ -11,6 +11,7 @@ A página é dividida em seções claras e intuitivas para guiar o usuário:
 * **Seção Como Você Pode Ajudar:** Lista diversas formas pelas quais os visitantes podem contribuir, como ser voluntário em projetos educativos, ajudar com alimentos ou materiais escolares, doar valores mensais, divulgar a causa, contribuir com serviços (design, marketing, tecnologia) e apoiar com brindes para ações sociais.
 * **Seção Impacto em Números:** Demonstra o alcance e a relevância do trabalho da ONG através de dados concretos, como o número de crianças alfabetizadas, voluntários ativos e estados atendidos.
 * **Seção Formulário:** Oferece um formulário simples para que os interessados possam se cadastrar para se voluntariar ou receber informativos, coletando nome, email e a forma desejada de ajuda.
+* **Seção Curiosidades:** Explora a inspiração por trás do símbolo da ONG, o Baobá, destacando como essa árvore milenar representa a força das raízes, resiliência e a missão de nutrir o sertão com esperança, educação e saúde.
 
 ## 🛠 Ferramentas Utilizadas
 
